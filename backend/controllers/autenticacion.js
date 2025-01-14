@@ -83,8 +83,8 @@ export const registroUsuario = async (req, res, next) => {
     try {
       const user = await Usuario.findOne({ usuario: req.body.usuario, activo: true });
   
-      if (!user) {
-        throw crearError(404, "Usuario no encontrado");
+     if (!user) {
+       throw crearError(404, "Usuario no encontrado");
       }
   
       if (!user.roles.includes('admin')) {
